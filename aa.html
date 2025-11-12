@@ -1,0 +1,128 @@
+<!DOCTYPE html> <!-- نوع سند -->
+<html lang="fa" dir="rtl"> <!-- زبان و جهت -->
+<head> <!-- بخش متادیتا -->
+<meta charset="UTF-8"> <!-- کدگذاری کاراکتر -->
+<title>صفحه تست برای عضو بودن در سایت مدرسه</title> <!-- عنوان صفحه -->
+<style> /* استایل داخلی */
+:root{ /* متغیرهای اصلی */
+    --bg:#e0e5ec; /* اینا چون تایم کم بود مخفف نوشتم رنگ پس‌زمینه */
+    --sh:8px 8px 16px #b8c1d1,-8px -8px 16px #fff; /* سایه نورمورفیک */
+    --r:25px; /* گوشه گرد */
+    --c:#6dd5ed /* رنگ اصلی */
+}
+*{ /* ریست کلی */
+    box-sizing:border-box; /* اندازه‌گیری با پدینگ */
+    margin:0; /* حذف حاشیه */
+    padding:0; /* حذف پدینگ */
+}
+body{ /* صفحه اصلی */
+    display:grid; /* چینش گرید */
+    place-items:center; /* مرکز کردن */
+    min-height:100vh; /* کمترین ارتفاع */
+    background:var(--bg); /* پس‌زمینه */
+    font:16px/1.5 tahoma /* فونت و خط */
+}
+.f{ /* فرم مرکزی */
+    background:var(--bg); /* پس‌زمینه فرم */
+    padding:2.5rem 2rem; /* فاصله داخلی */
+    border-radius:var(--r); /* گوشه گرد */
+    box-shadow:var(--sh); /* سایه فرم */
+    width:340px; /* عرض فرم */
+    text-align:center /* متن وسط */
+}
+.f img{ /* تصویر لوگو */
+    width:72px; /* عرض لوگو */
+    height:72px; /* ارتفاع لوگو */
+    border-radius:50%; /* دایره کامل */
+    margin-bottom:1rem; /* فاصله زیر */
+    box-shadow:var(--sh); /* سایه لوگو */
+    object-fit:cover /* پوشش کامل */
+}
+.f h3{ /* عنوان اصلی */
+    margin:0 0 .4rem; /* حاشیه عمودی */
+    font-size:1.5rem; /* اندازه فونت */
+    color:#2c3e50 /* رنگ متن */
+}
+.f p{ /* زیرعنوان */
+    margin:0 0 1.8rem; /* حاشیه عمودی */
+    font-size:1rem; /* اندازه فونت */
+    color:#7f8c8d; /* رنگ متن */
+    font-style:italic /* ایتالیک */
+}
+.i{ /* فیلد ورودی */
+    position:relative; /* موقعیت نسبی */
+    margin:1rem 0; /* حاشیه عمودی */
+    background:var(--bg); /* پس‌زمینه */
+    border-radius:14px; /* گوشه گرد */
+    padding:.75rem 1rem .75rem 3rem; /* پدینگ چپ زیاد */
+    box-shadow:var(--sh); /* سایه فیلد */
+    transition:.2s /* انیمیشن */
+}
+.i::before{ /* آیکون پیش‌زمینه */
+    content:""; /* محتوای خالی */
+    position:absolute; /* موقعیت مطلق */
+    right:1rem; /* فاصله از راست */
+    top:50%; /* مرکز عمودی */
+    transform:translateY(-50%); /* جابجایی عمودی */
+    width:20px; /* عرض آیکون */
+    height:20px; /* ارتفاع آیکون */
+    background:var(--c); /* رنگ آیکون */
+    mask-size:contain; /* اندازه ماسک */
+    mask-repeat:no-repeat; /* بدون تکرار */
+    mask-position:center /* وسط ماسک */
+}
+.u::before{
+    mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E")
+} /* آیکون کاربر */
+.p::before
+{
+    mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M18 8h-1V6c0-2.76-2.24-5-5-5s-5 2.24-5 5v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z'/%3E%3C/svg%3E")
+} /* آیکون قفل */
+.i input{ /* ورودی متن */
+    width:100%; /* عرض کامل */
+    border:none; /* بدون حاشیه */
+    background:none; /* بدون پس‌زمینه */
+    outline:none; /* بدون فوکوس */
+    color:#2c3e50; /* رنگ متن */
+    font:inherit /* فونت والد */
+}
+.b{ /* دکمه ورود */
+    background:linear-gradient(135deg,#6dd5ed,#4ecdc4); /* گرادیان رنگ */
+    color:#fff; /* رنگ متن */
+    border:none; /* بدون حاشیه */
+    padding:.9rem; /* پدینگ داخلی */
+    border-radius:50px; /* گرد کامل */
+    margin:1.2rem 0 1.5rem; /* حاشیه عمودی */
+    cursor:pointer; /* نشانگر دست */
+    font-weight:bold; /* متن بولد */
+    font-size:1rem; /* اندازه فونت */
+    transition:.3s; /* انیمیشن */
+    box-shadow:var(--sh) /* سایه دکمه */
+}
+.b:hover{
+    transform:translateY(-2px);box-shadow:10px 10px 20px #b8c1d1,-10px -10px 20px #fff
+}
+.l{
+    font-size:.9rem;color:#7f8c8d
+}
+.l a{
+    color:var(--c);text-decoration:none
+}
+.l a:hover{
+    text-decoration:underline
+    }
+</style>
+</head>
+<body>
+    <h2>تقدیم به علی صامدی</h2>
+<div class="f">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRtt02yrPvyAtKKRS89W1EfdbACilKiNzO3A&s" alt="لوگو"> <!-- لوگو دایره‌ای -->
+  <h3>Web Development</h3> <!-- عنوان اصلی -->
+  <p>Made easy!</p> <!-- زیرعنوان -->
+  <div class="i u"><input type="text" placeholder="username"></div> <!-- فیلد نام کاربری -->
+  <div class="i p"><input type="password" placeholder="password"></div> <!-- فیلد رمز عبور -->
+  <button class="b"><a href="https://schpedia.ir/">login</a></button> <!-- دکمه ورود -->
+  <div class="l">Forgot password? or <a href="#">Sign Up</a></div> <!-- لینک‌ها -->
+</div>
+</body>
+</html>
